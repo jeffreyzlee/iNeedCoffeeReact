@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Connect with Owners!</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+			<link type="text/css" rel="stylesheet" href="ownerList.css"/>
+		</head>
+		<body onload="showOwnerInfo()">
+			<div class = "header">
+				<h1 style = "margin:0 auto;">iNeedCoffee!</h1>
+			</div>
+			<div class = "card" id = "userinfo" style = "margin-top: 5%;">
+
+			<div class = "container" style = "margin: 10px 10px 2px 2px;">
+			<p id = "userName"> </p>
+			<p id = "userEmail"></p>
+			<p id = "userPhone"></p>
+			<p id = "l1"></p>
+			<p id = "l2"></p>
+			<p id = "l3"></p>
+			<p id = "rent"></p>
+			<p id = "pop"></p>
+			<p id = "prx"></p>
+			<p id = "othr"></p>
+
+
+			</div>
+			<form action = "connect.html">
+				<button type = "submit" id = "submit" style = "margin: 5% 45% 5% 40%;"> Connect! </button>
+			</form>
+			</div>
+		<script>
+			function showOwnerInfo(){
+				var n = document.getElementById('userName');
+				n.innerHTML = " Full Name : " + localStorage.getItem("ownerName");
+
+				var e = document.getElementById('userEmail');
+				e.innerHTML = "Email : " + localStorage.getItem("email");
+
+				var p = document.getElementById('userPhone');
+				p.innerHTML = "Phone : " + localStorage.getItem("phoneNum");
+
+				var l1 = document.getElementById('l1');
+				l1.innerHTML = "Location #1 : " + localStorage.getItem("location1");
+
+				var l2 = document.getElementById('l2');
+				l2.innerHTML = "Location #2 : " + localStorage.getItem("location2");
+
+				var l3 = document.getElementById('l3');
+				l3.innerHTML = "Location #3 : " + localStorage.getItem("location3");
+
+				var rent = document.getElementById('rent');
+				rent.innerHTML = "Desired Rent : " + localStorage.getItem("rent");
+
+				var pop = document.getElementById('pop');
+				pop.innerHTML = "Desired Population : " + localStorage.getItem("pop");
+
+				var prx = document.getElementById('prx');
+				prx.innerHTML = "Desired Proximity to Uni : " + localStorage.getItem("prx");
+
+				var othr = document.getElementById('othr');
+				othr.innerHTML = "Other Listed Preferences : " + localStorage.getItem("othr");
+
+			}
+		</script>
+
+
+
+		</body>
+	</html>

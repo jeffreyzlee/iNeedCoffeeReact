@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>iNeedCoffee!</title>
+			<link type="text/css" rel="stylesheet" href="connect.css"/>
+		</head>
+		<body style = "overflow: hidden">
+			<div class = "header" >
+				<h1 style = "margin-top:0;">iNeedCoffee!</h1>
+			</div>
+	<div class = "outerLeft" style = "height: 94%;">
+		<div id="chatMsg" class = "chatMsg" >
+
+		</div>
+
+		<div class = "sendText">
+				<form name = "sendMsg">
+					<textarea id="Message" class="msg" placeholder="Write something.."></textarea>
+					<button type="button" id="submit" onclick = "addChatMessage()">Send</button>
+				</form>
+		</div>
+	</div>
+
+	<script>
+		function addChatMessage() {
+		    var chat = document.getElementById('Message'); // finds the container
+		    if(chat.value != ""){
+			    var newDiv = document.createElement('div');
+			    	newDiv.id = "newMsg";
+			    	newDiv.className = "container";
+			    	newDiv.innerHTML = chat.value;
+
+			    chatMsg.appendChild(newDiv);
+			    chat.value = "";
+			}
+
+		}
+	</script>
+
+
+			<div class = "outerRight" style = "height:94%; margin-top: 50px;">
+				<div class = "progress" >
+					<ol class="progressBar" style = "color: red;">
+					    <li id = "1" onclick="changeColor('1')">&nbsp;&nbsp;&nbsp;&nbsp;Connected</li>
+					    <li id = "2" onclick="changeColor('2')">&nbsp;&nbsp;&nbsp;&nbsp;Preferences Listed</li>
+					    <li id = "3" onclick="changeColor('3')">&nbsp;&nbsp;&nbsp;&nbsp;Research  Locations</li>
+					    <li id = "5" onclick="changeColor('5')">&nbsp;&nbsp;&nbsp;&nbsp;Rankings</li>
+					    <li id = "6" onclick="changeColor('6')">&nbsp;&nbsp;&nbsp;&nbsp;Contacting</li>
+					    <li id = "7" onclick="changeColor('7')">&nbsp;&nbsp;&nbsp;&nbsp;Sign!</li>
+					</ol>
+				</div>
+			</div>
+
+			<script>
+				function changeColor(id){
+					document.getElementById(id).style.color = 	"#228B22";
+				}
+			</script>
+		</body>
+	</html>

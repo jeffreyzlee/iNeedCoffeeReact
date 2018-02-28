@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height:100%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.header{
+	width: 100%;
+  height:10%;
+  padding-left: 3%;
+  padding-top: 20px;
+	background-color: #dc143c;
+  color: white;
+}
+
+.agentInfo{
+  float:left;
+  margin-left: 30%;
+  margin-right: 30%;
+  width:50%;
+  background-color: white;
+  height:100%;
+}
+
+.contactContent {
+  margin-top: 15%;
+  margin-left: 15%;
+}
+
+input {
+  margin-left: 3%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  width: 40%;
+}
+
+label{
+    display:inline-block;
+    width:25%;
+}
+
+@media (max-width:768px){
+	.agentInfo{
+		width:100%;
+    clear:right;
+    float:left;
+	}
+
+	.contactContent{
+		width:100%;
+		clear:right;
+		float:left;
+	}
+
+}

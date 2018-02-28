@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-class landingPage extends React.Component {
+class LandingPage extends React.Component {
   render() {
     return (
       <div className="jumbotron">
@@ -13,4 +13,4 @@ class landingPage extends React.Component {
   }
 }
 
-export default landingPage;
+export default LandingPage;

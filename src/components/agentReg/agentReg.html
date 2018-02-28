@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Agent Registration</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<link type="text/css" rel="stylesheet" href="agentReg.css"/>
+		</head>
+		<body>
+			<div class = "header" >
+				<h1 style = "margin-top:0;">iNeedCoffee!</h1>
+			</div>
+      <div class = "outer" style = "width:100%; height: 94%; margin:0;">
+				<div class = "agentInfo">
+          			<div class="contactContent">
+            			<form id="contactForm" onsubmit="javascript:storeDetails();" action="ownerList.html">
+              				<label>Full Name:</label><input type="text" id="fullName" />
+              				<br>
+              				<label>Email:</label><input type="text" id="email" />
+			              	<br>
+			              	<label>Work Phone:</label><input type="text" id="phone" />
+			              	<br>
+			              	<label>Agency:</label><input type="text" id="agency" />
+			              	<br>
+			              	<label>Desired Compensation:</label><input type="text" id="salary" />
+			              	<br>
+			              	<label>Personal Website:</label><input type="text" id="web" />
+											<br>
+											<button type="submit" id="sub"> Submit! </button>
+            			</form>
+
+									<script>
+									function storeDetails() {
+										if(typeof(Storage)!=="undefined") {
+											localStorage.setItem('agentName', document.getElementById('fullName').value);
+											localStorage.setItem('agentEmail', document.getElementById('email').value);
+											localStorage.setItem('agentPhone', document.getElementById('phone').value);
+											localStorage.setItem('agency', document.getElementById('agency').value);
+											localStorage.setItem('salary', document.getElementById('salary').value);
+											localStorage.setItem('website', document.getElementById('web').value);
+										} else {
+											alert('Your browser do not support local storage');
+										}
+									}
+									</script>
+          			</div>
+			  	</div>
+      	</div>
+		</body>
+	</html>

@@ -1,0 +1,62 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height:100%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.header{
+	width: 100%;
+  height:10%;
+  padding-left: 3%;
+  padding-top: 20px;
+	background-color: #dc143c;
+  color: white;
+}
+
+.ownerButton {
+  width: 350px;
+  margin: 0 auto;
+  padding: 100px 32px
+}
+
+.agentButton {
+  width: 350px;
+  margin: 0 auto;
+  padding: 0px 32px
+}
+
+.agentInfo{
+  float:left;
+  margin-left: 30%;
+  margin-right: 30%;
+  width:50%;
+  background-color: white;
+  height:100%;
+}
+
+.button {
+    background-color: #e7e7e7; /* Gray */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+@media (max-width:768px){
+	.agentInfo{
+		width:100%;
+    clear:right;
+    float:left;
+	}
+
+	.ownerInfo{
+		width:100%;
+		clear:right;
+		float:left;
+	}
+
+}
