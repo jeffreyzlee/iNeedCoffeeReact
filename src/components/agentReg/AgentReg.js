@@ -94,6 +94,7 @@ import { browserHistory } from 'react-router';
   
                   <input
                   type="submit"
+                  onClick={this.connectPage}
                   className="btn btn-primary"
                   />
               </form>

@@ -2,7 +2,12 @@ import React from 'react';
 import {Link} from 'react-router';
 import './ownerReg.css';
 import TextInput from '../common/TextInput';
+import { browserHistory } from 'react-router';
+ 
 class OwnerReg extends React.Component {
+  connectPage(){
+    browserHistory.push('connect');
+  }
 
   render() {
     return (
@@ -43,6 +48,7 @@ class OwnerReg extends React.Component {
               <input
               type="submit"
               className="btn btn-primary"
+              onClick={this.connectPage}
               />
             </form>
           </div>
