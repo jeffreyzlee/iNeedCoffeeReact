@@ -2,14 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 import './connect.css';
 
-import {
-  Step,
-  Stepper,
-  StepLabel,
-  StepContent
-} from 'material-ui/Stepper';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
 
 class Connect extends React.Component {
   addChatMessage(){
@@ -44,6 +36,16 @@ class Connect extends React.Component {
             </div>
           </div>
           <div className = "outerRight">
+            <div className = "agentCard">
+              <h4> AGENT </h4>
+              <p>Name:</p>
+              <p>Phone:</p>
+            </div>
+            <div className = "ownerCard">
+              <h4> OWNER </h4>
+              <p>Name:</p>
+              <p>Phone:</p>
+            </div>
           </div>
         </div>
 
@@ -51,6 +53,4 @@ class Connect extends React.Component {
     );
   }
 }
-
-
 export default Connect;
