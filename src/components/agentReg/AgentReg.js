@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 import TextInput from '../common/TextInput';
 import './agentReg.css';
-import { browserHistory } from 'react-router';
  
   class AgentReg extends React.Component {
       constructor(){
@@ -16,6 +15,7 @@ import { browserHistory } from 'react-router';
               salary: '',
               web: ''
           };
+          this.connectPage = this.connectPage.bind(this);
           this.onChange = this.onChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
       }
@@ -33,8 +33,10 @@ import { browserHistory } from 'react-router';
   
       handleSubmit(e){
           e.preventDefault();
+          console.log("entered");
           const state = this.state;
-          localStorage.setItem('state', JSON.stringify(this.state));
+          localStorage.setItem('agentState', JSON.stringify(this.state));
+          this.connectPage();
       }
       
       render() {
@@ -94,7 +96,6 @@ import { browserHistory } from 'react-router';
   
                   <input
                   type="submit"
-                  onClick={this.connectPage}
                   className="btn btn-primary"
                   />
               </form>
