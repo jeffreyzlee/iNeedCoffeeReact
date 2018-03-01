@@ -7,14 +7,20 @@ class AgentReg extends React.Component {
     return (
         <form>
             <h1>Agent Registration</h1>
+            
             <TextInput
-            name="fullName"
-            label="Full Name"
+            name="firstName"
+            label="First Name"
+            />
+
+            <TextInput
+            name="lastName"
+            label="Last Name"
             />
             
             <TextInput
             name="email"
-            label="Email"
+            label="Email Address"
             />
 
             <TextInput
@@ -24,17 +30,17 @@ class AgentReg extends React.Component {
 
             <TextInput
             name="agency"
-            label="Agency"
+            label="Agency (If Applicable)"
             />
 
             <TextInput
             name="salary"
-            label="Desired Compensation"
+            label="Desired Range of Compensation"
             />
 
             <TextInput
             name="web"
-            label="Personal Website"
+            label="Personal Website/Portfolio (Optional)"
             />
 
             <input
