@@ -15,4 +15,7 @@
 .ownerPreference{
     width:50%;
     overflow:hidden;
+    padding-left: 2%;
+    padding-top: 9%;
+    padding-right:3%;
 }

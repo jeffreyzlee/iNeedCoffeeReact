@@ -2,6 +2,7 @@
 import React, {PropTypes} from 'react';
 import Header from './common/Header';
 import {connect} from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends React.Component {
   render() {

@@ -1,64 +1,54 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height:100%;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-.header{
-	width: 100%;
-  height:10%;
-  padding-left: 3%;
-  padding-top: 20px;
-	background-color: #dc143c;
-  color: white;
-}
-
-.outerLeft{
-	width:60%;
-	float:left;
-	background-color:white;
-	overflow:hidden;
-}
-
-.outerRight{
-	overflow:hidden;
-	width:40%;
-	float:left;
-	background-color:white;
-	margin: 0 auto;
-}
 
 .chatMsg{
-	overflow-x:hidden;
-	height:75%;
+  width: 90%;
+  overflow-x:hidden;
+  height: 540px;
+  padding-right: 10%;
 }
 
 .sendText{
-	margin: 0 auto;
-	width:90%;
-	height:25%;
+  width:83%;
 }
 
 .msg{
 	border:2px solid #dedede;
 	border-radius: 10px;
-    padding: 10px;
-    margin: 2% 2% 2% 2%;
-    width: 95%;
-    height: 70px;
-    box-sizing: border-box;
+  padding: 10px;
+  height: 70px;
+  box-sizing: border-box;
+  width: 100%;
 
 }
-
 .container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    padding: 10px;
-    height: 8%;
-    margin: 3% 5% 3% 5%;
+  border: 4px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 10px;
+  height: 11%;
+  margin-bottom: 2%;
 }
+
+#newMsg{
+  width: 700px;
+}
+
+.outerLeft{
+  width: 60%;
+  height: 100%;
+  float:left;
+}
+.outerRight{
+  width:40%;
+  height: 100%;
+  float:left;
+  background-color: red;
+}
+
+.progress{
+  width: 100%;
+  height:100%;
+}
+
 
 .progressBar {
   list-style: none;
@@ -75,12 +65,4 @@ html, body {
   font-size: 1.0em;
   position: absolute;
   left: -.1em;
-}
-
-.complete{
-  color: green;
-}
-
-.inProgress{
-  color: red;
 }
