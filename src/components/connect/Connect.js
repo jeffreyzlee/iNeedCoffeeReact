@@ -34,7 +34,7 @@ class Connect extends React.Component {
     return (     
         <div>
           <div className = "outerLeft">
-          <h4 style={{marginLeft:'300px'}}> Messenger</h4>
+          <h4 style={{marginLeft:'300px'}}> Messenger Service</h4>
             <div className = "chatMsg" id = "chatMsg">
             
             </div>
@@ -50,7 +50,7 @@ class Connect extends React.Component {
           </div>
           <div className = "outerRight">
             <div className = "agentCard">
-              <h4> AGENT </h4>
+              <h4> AGENT INFO </h4>
               <p>Name: {this.getAgentInfo("firstName")} {this.getAgentInfo("lastName")}</p>
               <p>Email: {this.getAgentInfo("email")}</p>
               <p>Phone: {this.getAgentInfo("phone")}</p>
@@ -59,15 +59,13 @@ class Connect extends React.Component {
               <p>Personal Website/Portfolio: {this.getAgentInfo("web")}</p>
             </div>
             <div className = "ownerCard">
-              <h4> OWNER </h4>
+              <h4> PROSPECTIVE OWNER INFO </h4>
               <p>Name: {this.getOwnerInfo("firstName")} {this.getOwnerInfo("lastName")}</p>
               <p>Email: {this.getOwnerInfo("email")}</p>
               <p>Work Phone: {this.getOwnerInfo("phone")}</p>
               <p>Most Recent Employer: {this.getOwnerInfo("work")}</p>
               <p>Coffee Shop Name: {this.getOwnerInfo("company")}</p>
-              <p>Location 1: {this.getOwnerInfo("l1")}</p>
-              <p>Location 2: {this.getOwnerInfo("l2")}</p>
-              <p>Location 3: {this.getOwnerInfo("l3")}</p>
+              <p>Location1: {this.getOwnerInfo("l1")} || Location2: {this.getOwnerInfo("l2")} || Location3: {this.getOwnerInfo("l3")}</p>
               <p>Preferred Rent: {this.getOwnerInfo("r1")}</p>
               <p>Max Affordable Rent: {this.getOwnerInfo("r2")}</p>
               <p>Population Density: {this.getOwnerInfo("p1")}</p>
