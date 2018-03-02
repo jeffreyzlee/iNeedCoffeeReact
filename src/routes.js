@@ -8,7 +8,6 @@ import ManageCoursePage from './components/course/ManageCoursePage'; //eslint-di
 
 import AgentReg from './components/agentReg/AgentReg';
 import Connect from './components/connect/Connect';
-import OwnerList from './components/ownerList/OwnerList';
 import OwnerReg from './components/ownerReg/OwnerReg';
 
 export default (
@@ -21,7 +20,6 @@ export default (
 
     <Route path="agentRegistration" component={AgentReg} />
     <Route path="connect" component={Connect} />
-    <Route path="ownerList" component={OwnerList} />
     <Route path="ownerRegistration" component={OwnerReg} />
   </Route>
 );
