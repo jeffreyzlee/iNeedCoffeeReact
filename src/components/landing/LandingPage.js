@@ -17,7 +17,7 @@ class LandingPage extends React.Component {
           <button onClick={this.ownerReg} className="button">Owners Registration</button>
         </div>
         <div>
-            <button onClick={this.agentReg} className="button">Agents Registration</button>
+            <button onClick={this.agentReg} className="button2">Agents Registration</button>
         </div>
       </div>
     );
