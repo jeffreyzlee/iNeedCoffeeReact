@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 import './connect.css';
 
-
 class Connect extends React.Component {
   addChatMessage(){
     const chat = document.getElementById('Message'); // finds the container
@@ -34,7 +33,7 @@ class Connect extends React.Component {
     return (     
         <div>
           <div className = "outerLeft">
-          <h4 style={{marginLeft:'300px'}}> Messenger Service</h4>
+          <h4 style={{marginLeft:'300px'}}> Messenger Service </h4>
             <div className = "chatMsg" id = "chatMsg">
             
             </div>
@@ -50,7 +49,7 @@ class Connect extends React.Component {
           </div>
           <div className = "outerRight">
             <div className = "agentCard">
-              <h4> AGENT INFO </h4>
+              <h4 className = "agents"> AGENT INFO </h4>
               <p>Name: {this.getAgentInfo("firstName")} {this.getAgentInfo("lastName")}</p>
               <p>Email: {this.getAgentInfo("email")}</p>
               <p>Phone: {this.getAgentInfo("phone")}</p>
@@ -59,7 +58,7 @@ class Connect extends React.Component {
               <p>Personal Website/Portfolio: {this.getAgentInfo("web")}</p>
             </div>
             <div className = "ownerCard">
-              <h4> PROSPECTIVE OWNER INFO </h4>
+              <h4 className = "owners"> PROSPECTIVE OWNER INFO </h4>
               <p>Name: {this.getOwnerInfo("firstName")} {this.getOwnerInfo("lastName")}</p>
               <p>Email: {this.getOwnerInfo("email")}</p>
               <p>Work Phone: {this.getOwnerInfo("phone")}</p>

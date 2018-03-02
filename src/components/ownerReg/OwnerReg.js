@@ -108,7 +108,7 @@ handleSubmit(e){
                 </div>
                 <div id="collapse1" className="panel-collapse collapse">
                   <div className="panel-body">
-                    <h5> Let's Get Started ; Enter your three most preferred locations! </h5>
+                    <h5 className = "preferenceT"> Let Us Get Started ; Enter your three most preferred locations! </h5>
                     <TextInput name = "l1" label = "Location 1" value={l1} onChange={this.onChange}/>
                     <TextInput name = "l2" label = "Location 2" value={l2} onChange={this.onChange}/>
                     <TextInput name = "l3" label = "Location 3" value={l3} onChange={this.onChange}/>
