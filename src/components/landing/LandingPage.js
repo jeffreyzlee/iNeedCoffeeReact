@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
-import { browserHistory } from 'react-router';
+import {Link, browserHistory} from 'react-router';
 import './landing.css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';

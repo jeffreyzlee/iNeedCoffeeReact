@@ -24,8 +24,7 @@ ReactDOM.render(
     <Router history={browserHistory} routes={routes} />
   </Provider>,*/
   <Provider store={store}>
-  <Router history={browserHistory} routes={routes} />,
-    <App />
+  <App />
   </Provider>,
   document.getElementById('app')
 );

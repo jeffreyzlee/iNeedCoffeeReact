@@ -32,6 +32,6 @@ export default function(){
             l1: "Berkeley",
             l2: "San Jose",
             l3: "Saratoga"
-        },
+        }
     ];
 }

@@ -17,6 +17,6 @@ export default function(){
             agency: 'Efficient Agents',
             salary: '$7000',
             web: 'www.efficientagents.com'
-        },
+        }
     ];
 }
