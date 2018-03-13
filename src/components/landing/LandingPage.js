@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router';
 import { browserHistory } from 'react-router';
 import './landing.css';
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import Header from '../common/Header';
 class LandingPage extends React.Component {
   agentReg(){
     browserHistory.push('agentRegistration');
@@ -23,5 +25,6 @@ class LandingPage extends React.Component {
     );
   }
 }
+
 
 export default LandingPage;

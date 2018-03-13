@@ -33,7 +33,7 @@ import './agentReg.css';
   
       handleSubmit(e){
           e.preventDefault();
-          console.log("entered");
+          //console.log("entered");
           const state = this.state;
           localStorage.setItem('agentState', JSON.stringify(this.state));
           this.connectPage();

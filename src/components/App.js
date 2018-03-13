@@ -3,7 +3,12 @@ import React, {PropTypes} from 'react';
 import Header from './common/Header';
 import {connect} from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
+import LandingPage from './landing/LandingPage';
 
+import { Router, browserHistory } from 'react-router';
+import routes from '../routes';
+
+/*
 class App extends React.Component {
   render() {
     return (
@@ -29,3 +34,16 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps)(App);
+*/
+
+const App = () => (
+  <div>
+    
+    <Header/>,
+    <LandingPage/>,
+    
+  </div>
+
+);
+
+export default App;
