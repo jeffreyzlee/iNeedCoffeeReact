@@ -1,5 +1,5 @@
-export default function(){
-    return[
+const initialState = {
+    owners: [
         {
             firstName: "Jayson",
             lastName: "Brown",
@@ -17,7 +17,7 @@ export default function(){
             n1: "N/A"
         },
         {
-            firstName: "Melissa",
+            firstName: "Kevin",
             lastName: "Lee",
             email: "mel-lee@gmail.com",
             phone: "555-312-4232",
@@ -48,5 +48,20 @@ export default function(){
             u1: "10 miles",
             n1: "N/A"
         }
-    ];
+    ]
+};
+
+
+
+//do you pass in 2 params?
+export default function (state = initialState, action){
+    console.log("Action.type is", action.type);
+    switch (action.type){
+        case "OWNER_ADDED":
+            console.log("You are here");
+            initialState.owners = initialState.owners.concat(action.payload);
+            return initialState.owners;
+        default:
+            return initialState.owners;
+    }
 }

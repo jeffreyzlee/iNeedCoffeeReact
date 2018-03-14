@@ -19,7 +19,7 @@ const App = () => (
     <Header/>
     <LandingPage/>
     <h2> List Of Owners </h2>
-    <OwnerList/>
+    <OwnerList/> 
     <hr/>
     <OwnerInfo/>
     <OwnerReg/>

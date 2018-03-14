@@ -33,6 +33,7 @@ function mapStateToProps(state){
 
 //pass in actions as prop
 function matchDispatchToProps(dispatch){
+    //create an object of actions each wrapped with the dispatch
     return bindActionCreators({selectOwner: selectOwner}, dispatch);
 }
 
