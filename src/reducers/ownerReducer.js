@@ -9,7 +9,12 @@ export default function(){
             company: "Coffee My Heart",
             l1: "Seattle",
             l2: "San Francisco",
-            l3: "San Jose"
+            l3: "San Jose",
+            r1: "5000", 
+            r2: "6000",
+            p1: "1 mil",
+            u1: "10 miles",
+            n1: "N/A"
         },
         {
             firstName: "Melissa",
@@ -20,7 +25,12 @@ export default function(){
             company: "CoffeeLife",
             l1: "San Diego",
             l2: "Los Angeles",
-            l3: "N/A"
+            l3: "N/A",
+            r1: "5000", 
+            r2: "6000",
+            p1: "1 mil",
+            u1: "10 miles",
+            n1: "N/A"
         },
         {
             firstName: "Jake",
@@ -31,7 +41,12 @@ export default function(){
             company: "Brews",
             l1: "Berkeley",
             l2: "San Jose",
-            l3: "Saratoga"
+            l3: "Saratoga",
+            r1: "5000", 
+            r2: "6000",
+            p1: "1 mil",
+            u1: "10 miles",
+            n1: "N/A"
         }
     ];
 }

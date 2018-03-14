@@ -2,11 +2,15 @@ import React from 'react';
 import {Link, browserHistory} from 'react-router';
 import './ownerReg.css';
 import TextInput from '../common/TextInput';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {addOwner} from '../../actions/addOwner';
  
 class OwnerReg extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
+      owner:{
         firstName: '',
         lastName: '',
         email: '',
@@ -21,25 +25,34 @@ class OwnerReg extends React.Component {
         p1: '',
         u1: '',
         n1: ''
+      },
+      submitted: false
     };
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 }
+/*
   connectPage(){
     browserHistory.push('connect');
-  }
+  }*/
 
-onChange(e) {
-    e.preventDefault();
-    const state = this.state;
-    state[e.target.name] = e.target.value;
-    this.setState(state);
+handleChange(e) {
+    const {name, value} = event.target;
+    const {owner} = this.state;
+
+    this.setState({
+      owner: {
+        [name]: value //check later
+      }
+    });
 }
 
 handleSubmit(e){
     e.preventDefault();
-    const state = this.state;
-    localStorage.setItem('ownerState', JSON.stringify(this.state));
+    this.setState({submitted: true});
+    const {user} = this.state;
+    const {dispatch} = this.props;
+    dispatch(addOwner(user));
     this.connectPage();
 }
 
@@ -54,42 +67,42 @@ handleSubmit(e){
               name="firstName"
               label="First Name"
               value={firstName}
-              onChange={this.onChange}
+              handleChange={this.handleChange}
               />
 
               <TextInput
               name="lastName"
               label="Last Name"
               value={lastName}
-              onChange={this.onChange}
+              handleChange={this.handleChange}
               />
               
               <TextInput
               name="email"
               label="Email Address"
               value={email}
-              onChange={this.onChange}
+              handleChange={this.handleChange}
               />
 
               <TextInput
               name="phone"
               label="Work Phone"
               value={phone}
-              onChange={this.onChange}
+              handleChange={this.handleChange}
               />
 
               <TextInput
               name="work"
               label="Most Recent Employer"
               value={work}
-              onChange={this.onChange}
+              handleChange={this.handleChange}
               />
 
               <TextInput
               name="company"
               label="Coffee Shop Name"
               value={company}
-              onChange={this.onChange}
+              handleChange={this.handleChange}
               />
 
               <input
@@ -109,9 +122,9 @@ handleSubmit(e){
                 <div id="collapse1" className="panel-collapse collapse">
                   <div className="panel-body">
                     <h5 className = "preferenceT"> Let Us Get Started ; Enter your three most preferred locations! </h5>
-                    <TextInput name = "l1" label = "Location 1" value={l1} onChange={this.onChange}/>
-                    <TextInput name = "l2" label = "Location 2" value={l2} onChange={this.onChange}/>
-                    <TextInput name = "l3" label = "Location 3" value={l3} onChange={this.onChange}/>
+                    <TextInput name = "l1" label = "Location 1" value={l1} handleChange={this.handleChange}/>
+                    <TextInput name = "l2" label = "Location 2" value={l2} handleChange={this.handleChange}/>
+                    <TextInput name = "l3" label = "Location 3" value={l3} handleChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
@@ -125,8 +138,8 @@ handleSubmit(e){
                 <div id="collapse2" className="panel-collapse collapse">
                   <div className="panel-body">
                     <h5> Enter your preferred rent range (per month) </h5>
-                    <TextInput name = "r1" label = "Preferred Rent" value={r1} onChange={this.onChange}/>
-                    <TextInput name = "r2" label = "Max Affordable Rent" value={r2} onChange={this.onChange}/>
+                    <TextInput name = "r1" label = "Preferred Rent" value={r1} handleChange={this.handleChange}/>
+                    <TextInput name = "r2" label = "Max Affordable Rent" value={r2} handleChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
@@ -140,7 +153,7 @@ handleSubmit(e){
                 <div id="collapse3" className="panel-collapse collapse">
                   <div className="panel-body">
                     <h5> Enter your preferred population density within the area (N/A if no preference) </h5>
-                    <TextInput name = "p1" label = "Population Density" value={p1} onChange={this.onChange}/>
+                    <TextInput name = "p1" label = "Population Density" value={p1} handleChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
@@ -154,7 +167,7 @@ handleSubmit(e){
                 <div id="collapse4" className="panel-collapse collapse">
                   <div className="panel-body">
                   <h5> Enter an ideal proximity from university (N/A if no preference) </h5>
-                    <TextInput name = "u1" label = "Preferred Proximity to University" value={u1} onChange={this.onChange}/>
+                    <TextInput name = "u1" label = "Preferred Proximity to University" value={u1} handleChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
@@ -168,7 +181,7 @@ handleSubmit(e){
                 <div id="collapse5" className="panel-collapse collapse">
                   <div className="panel-body">
                   <h5> Enter any other notes or preferences below</h5>
-                    <TextInput name = "n1" label = "" value={n1} onChange={this.onChange}/>
+                    <TextInput name = "n1" label = "" value={n1} handleChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
@@ -179,4 +192,9 @@ handleSubmit(e){
   }
 }
 
-export default OwnerReg;
+//pass in actions as prop
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({addOwner: addOwner}, dispatch);
+}
+
+export default connect(matchDispatchToProps)(OwnerReg);
