@@ -1,108 +1,114 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import {Link, browserHistory} from 'react-router-dom';
 import TextInput from '../common/TextInput';
 import './agentReg.css';
+import {connect} from 'react-redux';
+import {addAgent} from '../../actions/addAgent';
+import {bindActionCreators} from 'redux';
  
   class AgentReg extends React.Component {
-      constructor(){
-          super();
+      constructor(props){
+          super(props);
           this.state = {
-              firstName: '',
-              lastName: '',
-              email: '',
-              phone: '',
-              agency: '',
-              salary: '',
-              web: ''
+              agent:{
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                agency: '',
+                salary: '',
+                web: ''
+              }
           };
-          this.connectPage = this.connectPage.bind(this);
-          this.onChange = this.onChange.bind(this);
+          this.handleChange = this.handleChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
       }
 
-      connectPage(){
-        browserHistory.push('connect');
-      }
   
-      onChange(e) {
-          e.preventDefault();
-          const state = this.state;
-          state[e.target.name] = e.target.value;
-          this.setState(state);
+      handleChange(e) {
+          const {name, value} = e.target;
+          const {agent} = this.state;
+          this.setState({
+              agent:{
+                  ...agent,
+                  [name]: value
+              }
+
+          });
       }
   
       handleSubmit(e){
           e.preventDefault();
-          //console.log("entered");
-          const state = this.state;
-          localStorage.setItem('agentState', JSON.stringify(this.state));
-          this.connectPage();
+          console.log("entered");
+          const {agent} = this.state;
+          const {dispatch} = this.props;
+          dispatch(addAgent(agent));
       }
       
       render() {
           const {firstName, lastName, email, phone, agency, salary, web} = this.state;
           return (
-          <div>
-              <form onSubmit={this.handleSubmit}>
+          <div className = "input">
+              <form>
                   <h1>Agent Registration</h1>
                   <TextInput
                   name="firstName"
                   label="First Name"
                   value={firstName}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   /> 
   
                   <TextInput
                   name="lastName"
                   label="Last Name"
                   value={lastName}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   />
                   
                   <TextInput
                   name="email"
                   label="Email Address"
                   value={email}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   />
   
                   <TextInput
                   name="phone"
                   label="Work Phone"
                   value={phone}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   />
   
                   <TextInput
                   name="agency"
                   label="Agency (If Applicable)"
                   value={agency}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   />
   
                   <TextInput
                   name="salary"
                   label="Desired Range of Compensation"
                   value={salary}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   />
   
                   <TextInput
                   name="web"
                   label="Personal Website/Portfolio (Optional)"
                   value={web}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                   />
-  
-                  <input
-                  type="submit"
-                  className="btn btn-primary"
-                  />
-              </form>
+                </form>
+
+                <button onClick={this.handleSubmit}><Link to="/ownerList">Connect</Link></button>
           </div>
       );
     }
   }
+  function matchDispatchToProps(dispatch){
+    return bindActionCreators({addAgent: addAgent}, dispatch);
+  }
   
-  export default AgentReg;
+  export default connect(matchDispatchToProps)(AgentReg);
   

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectOwner} from '../actions/selectOwner';
+import ownerInfo from './ownerInfo';
 
 //dumb component that doesn't know anything about main data...works with container
 class OwnerList extends Component{
@@ -17,9 +18,13 @@ class OwnerList extends Component{
 
     render(){
        return(
-            <ul>
-                {this.createListItems()}
-            </ul>
+            <div>
+                <div>
+                    <ul>
+                        {this.createListItems()}
+                    </ul>
+                </div>
+            </div>
        ); 
     }
 }

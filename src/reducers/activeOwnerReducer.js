@@ -1,7 +1,9 @@
 export default function ( state = null, action ){
     switch(action.type){
         case "OWNER_SELECTED":
-            console.log("active");
+            console.log("active!");
+            return action.payload;
+        case "OWNER_ADDED":
             return action.payload;
         default:
             console.log("No active");

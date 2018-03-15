@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import './connect.css';
+import {connect} from 'react-redux';
 
 class Connect extends React.Component {
   addChatMessage(){
@@ -17,23 +18,16 @@ class Connect extends React.Component {
     }
   }
 
-  getAgentInfo(field){
-    const agent = localStorage.getItem('agentState');
-    let agentInfo = JSON.parse(agent);
-    return agentInfo[field];
+  checkNull(){
+    if(this.props.agents){
+      return(<h2> Select an owner! </h2>);
   }
-
-  getOwnerInfo(field){
-    const owner = localStorage.getItem('ownerState');
-    let ownerInfo = JSON.parse(owner);
-    return ownerInfo[field];
   }
-
   render() {
     return (     
         <div>
           <div className = "outerLeft">
-          <h4 style={{marginLeft:'300px'}}> Messenger Service </h4>
+            <h4 style={{marginLeft:'300px'}}> Messenger Service </h4>
             <div className = "chatMsg" id = "chatMsg">
             
             </div>
@@ -49,27 +43,27 @@ class Connect extends React.Component {
           </div>
           <div className = "outerRight">
             <div className = "agentCard">
+              
               <h4 className = "agents"> AGENT INFO </h4>
-              <p>Name: {this.getAgentInfo("firstName")} {this.getAgentInfo("lastName")}</p>
-              <p>Email: {this.getAgentInfo("email")}</p>
-              <p>Phone: {this.getAgentInfo("phone")}</p>
-              <p>Agency: {this.getAgentInfo("agency")}</p>
-              <p>Desired Range of Compensation: {this.getAgentInfo("salary")}</p>
-              <p>Personal Website/Portfolio: {this.getAgentInfo("web")}</p>
+              <p>Name: {this.props.agents.firstName} {this.props.agents.lastName}</p>
+              <p>Email: {this.props.agents.email}</p>
+              <p>Phone: {this.props.agents.phone}</p>
+              <p>Agency: {this.props.agents.agency}</p>
+              <p>Desired Range of Compensation: {this.props.agents.salary}</p>
+              <p>Personal Website/Portfolio: {this.props.agents.web}</p>
             </div>
             <div className = "ownerCard">
               <h4 className = "owners"> PROSPECTIVE OWNER INFO </h4>
-              <p>Name: {this.getOwnerInfo("firstName")} {this.getOwnerInfo("lastName")}</p>
-              <p>Email: {this.getOwnerInfo("email")}</p>
-              <p>Work Phone: {this.getOwnerInfo("phone")}</p>
-              <p>Most Recent Employer: {this.getOwnerInfo("work")}</p>
-              <p>Coffee Shop Name: {this.getOwnerInfo("company")}</p>
-              <p>Location1: {this.getOwnerInfo("l1")} || Location2: {this.getOwnerInfo("l2")} || Location3: {this.getOwnerInfo("l3")}</p>
-              <p>Preferred Rent: {this.getOwnerInfo("r1")}</p>
-              <p>Max Affordable Rent: {this.getOwnerInfo("r2")}</p>
-              <p>Population Density: {this.getOwnerInfo("p1")}</p>
-              <p>Preferred Proximity: {this.getOwnerInfo("u1")}</p>
-              <p>Other Notes: {this.getOwnerInfo("n1")}</p>
+              <p> Name: {this.props.owners.firstName} {this.props.owners.lastName} </p>
+              <p> Email: {this.props.owners.email} </p>
+              <p> Phone Number: {this.props.owners.phone} </p>
+              <p> Coffee Store Name: {this.props.owners.company} </p>
+              <p> Most Recent Employer: {this.props.owners.work} </p>
+              <p> Preferred Locations : {this.props.owners.l1}, {this.props.owners.l2}, {this.props.owners.l3}</p>
+              <p> Preferred Rent: | Max Rent: {this.props.owners.r1} | {this.props.owners.r2} </p>
+              <p> Population Preference : {this.props.owners.p1}</p>
+              <p> Proximity to University : {this.props.owners.u1}</p>
+              <p> Other Notes: {this.props.owners.n1}</p>
             </div>
           </div>
         </div>
@@ -78,4 +72,13 @@ class Connect extends React.Component {
     );
   }
 }
-export default Connect;
+
+//takes application storage state and passes it as a component.
+//We are ACCESSING memory in this file only
+function mapStateToProps(state){
+  return {
+      owners: state.activeOwner,
+      agents: state.agents
+  };
+}
+export default connect(mapStateToProps)(Connect);

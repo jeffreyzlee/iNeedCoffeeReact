@@ -7,3 +7,10 @@
     color: whitesmoke;
     padding-left: 30px;
 }
+
+.homelink{
+    font-size: 15px;
+    color: white;
+    float:right;
+    padding-right: 3%;
+}

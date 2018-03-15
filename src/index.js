@@ -3,7 +3,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'; //
-import { Router, browserHistory } from 'react-router';
+import {BrowserRouter as Router, Route, browserHistory } from 'react-router-dom';
 import routes from './routes';
 
 import App from './components/App';
@@ -13,13 +13,26 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 import allReducers from './reducers';
 import Header from './components/common/Header';
+import OwnerReg from './components/ownerReg/OwnerReg';
+import AgentReg from './components/agentReg/AgentReg';
+import OwnerDisplay from './containers/ownerDisplay';
+import Connect from './components/connect/Connect';
 
 //const store = configureStore();
 const store = createStore(allReducers); //create main application STORE in redux
 
 ReactDOM.render(
   <Provider store={store}>
-  <App />
+    <Router>
+      <div>
+        <Header/>
+        <Route exact path="/" component={App}/>
+        <Route path="/ownerRegistration" component={OwnerReg}/>
+        <Route path="/agentRegistration" component={AgentReg}/>
+        <Route path="/ownerList" component={OwnerDisplay}/>
+        <Route path="/connect" component={Connect}/>
+      </div>
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

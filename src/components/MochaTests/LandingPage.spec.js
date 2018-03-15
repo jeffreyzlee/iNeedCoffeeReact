@@ -1,3 +1,4 @@
+
 import React from 'react';
 import expect from 'expect';
 import { shallow, mount } from 'enzyme';
@@ -13,3 +14,4 @@ describe('LandingPage Component', () => {
     expect(wrapper.find('.button2').text()).toEqual('Agents Registration');
   });
 });
+

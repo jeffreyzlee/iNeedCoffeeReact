@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import {Link} from 'react-router-dom';
 import './ownerReg.css';
 import TextInput from '../common/TextInput';
 import {bindActionCreators} from 'redux';
@@ -70,7 +70,7 @@ handleSubmit(e){
     return (
         <div className = "outer">
           <div className = "ownerInfo">
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <h1>Owner Registration</h1>
               <TextInput
               name="firstName"
@@ -114,11 +114,8 @@ handleSubmit(e){
               onChange={this.handleChange}
               />
 
-              <input
-              type="submit"
-              className="btn btn-primary"
-              />
             </form>
+            <button onClick={this.handleSubmit}><Link to="/connect">Connect</Link></button>
           </div>
           <div className = "ownerPreference">
             <div className="vertical-menu" id="accordion" >
