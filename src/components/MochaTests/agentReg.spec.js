@@ -1,8 +1,8 @@
-/*
+
 import React from 'react';
 import expect from 'expect';
 import { shallow, mount } from 'enzyme';
-import AgentReg from '../agentReg/AgentReg';
+import {AgentReg} from '../agentReg/AgentReg';
 const wrapper = mount(<AgentReg/>);
 
 describe('AgentReg Component', () => {
@@ -12,5 +12,3 @@ describe('AgentReg Component', () => {
   });
 
 });
-
-*/

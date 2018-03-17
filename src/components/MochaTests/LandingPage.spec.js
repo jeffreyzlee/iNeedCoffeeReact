@@ -1,7 +1,7 @@
 
 import React from 'react';
 import expect from 'expect';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import LandingPage from '../landing/LandingPage';
 const wrapper = mount(<LandingPage/>);
 

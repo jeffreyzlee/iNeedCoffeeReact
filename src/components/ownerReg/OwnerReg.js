@@ -8,7 +8,7 @@ import {addOwner} from '../../actions/addOwner';
 import history from '../../history';
 
  
-class OwnerReg extends React.Component {
+export class OwnerReg extends React.Component {
   constructor(props){
     super(props);
     this.state = {

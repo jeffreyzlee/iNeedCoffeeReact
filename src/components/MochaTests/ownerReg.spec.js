@@ -1,8 +1,7 @@
-/*
 import React from 'react';
 import expect from 'expect';
-import { shallow, mount } from 'enzyme';
-import OwnerReg from '../ownerReg/OwnerReg';
+import { mount } from 'enzyme';
+import {OwnerReg} from '../ownerReg/OwnerReg';
 const wrapper = mount(<OwnerReg/>);
 
 describe('OwnerReg Component', () => {
@@ -17,4 +16,3 @@ describe('OwnerReg Component', () => {
 
 });
 
-*/

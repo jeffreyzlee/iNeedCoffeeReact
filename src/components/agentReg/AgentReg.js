@@ -6,7 +6,7 @@ import {addAgent} from '../../actions/addAgent';
 import {bindActionCreators} from 'redux';
 import history from '../../history';
  
-  class AgentReg extends React.Component {
+  export class AgentReg extends React.Component {
       constructor(props){
           super(props);
           this.state = {

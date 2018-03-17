@@ -52,7 +52,6 @@ const initialState = {
 };
 
 
-
 //do you pass in 2 params?
 export default function (state = initialState, action){
     console.log("Action.type is", action.type);
