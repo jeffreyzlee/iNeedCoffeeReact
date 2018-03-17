@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router-dom';
 import TextInput from '../common/TextInput';
 import './agentReg.css';
 import {connect} from 'react-redux';
 import {addAgent} from '../../actions/addAgent';
 import {bindActionCreators} from 'redux';
+import history from '../../history';
  
   class AgentReg extends React.Component {
       constructor(props){
@@ -43,6 +43,7 @@ import {bindActionCreators} from 'redux';
           const {agent} = this.state;
           const {dispatch} = this.props;
           dispatch(addAgent(agent));
+          history.push('/ownerList');
       }
       
       render() {
@@ -101,7 +102,7 @@ import {bindActionCreators} from 'redux';
                   />
                 </form>
 
-                <button onClick={this.handleSubmit}><Link to="/ownerList">Connect</Link></button>
+                <button onClick={this.handleSubmit}>Connect</button>
           </div>
       );
     }

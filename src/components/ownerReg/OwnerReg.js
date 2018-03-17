@@ -5,6 +5,7 @@ import TextInput from '../common/TextInput';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {addOwner} from '../../actions/addOwner';
+import history from '../../history';
 
  
 class OwnerReg extends React.Component {
@@ -32,10 +33,7 @@ class OwnerReg extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 }
-/*
-  connectPage(){
-    browserHistory.push('connect');
-  }*/
+
 
 handleChange(e) {
     const {name, value} = e.target;
@@ -63,6 +61,7 @@ handleSubmit(e){
 
     //do you return addNew to update the reducer??
     dispatch(addOwner(owner));
+    history.push('/connect');
 }
 
   render() {
@@ -115,7 +114,7 @@ handleSubmit(e){
               />
 
             </form>
-            <button onClick={this.handleSubmit}><Link to="/connect">Connect</Link></button>
+            <button onClick={this.handleSubmit}>Connect</button>
           </div>
           <div className = "ownerPreference">
             <div className="vertical-menu" id="accordion" >

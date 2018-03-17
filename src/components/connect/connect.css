@@ -4,6 +4,7 @@
   overflow-x:hidden;
   height: 540px;
   padding-right: 10%;
+  margin: 0 4% 0 2%;
 }
 
 .sendText{
@@ -26,12 +27,26 @@
   padding: 10px;
   height: 11%;
   margin-bottom: 2%;
+  padding-left: 40px;
+}
+
+.container2 {
+  border: 4px solid #dedede;
+  background-color: lightpink;
+  border-radius: 4px;
+  padding: 10px;
+  padding-right: 40px;
+  height: 11%;
+  margin-bottom: 2%;
+  text-align: right;
 }
 
 #newMsg{
   width: 700px;
 }
-
+#response{
+  width: 700px;
+}
 .outerLeft{
   width: 60%;
   height: 100%;
@@ -49,9 +64,9 @@
   background-color:#dedede;
   border-radius: 4px;
   padding: 10px;
-  height: 400px;
+  height: 290px;
   width: 500px;
-  margin: 3% 0% 3% 0%;
+  margin: 5% 0% 3% 0%;
   border-color: #dc143c;
   
 }
@@ -61,8 +76,8 @@
   border-color: #dc143c;
   border-radius: 4px;
   padding: 10px;
-  height: 250px;
+  height: 200px;
   width: 500px;
-  margin: 3% 0% 3% 0%;
+  margin: 3% 10% 3% 0%;
   
 }

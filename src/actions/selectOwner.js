@@ -6,5 +6,4 @@ export const selectOwner = (owner) => {
         type: "OWNER_SELECTED",
         payload: owner
     };
-
 };

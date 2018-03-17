@@ -1,0 +1,8 @@
+.owners{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+li:hover { 
+    background-color: lightgrey;
+}

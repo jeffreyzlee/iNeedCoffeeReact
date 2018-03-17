@@ -9,8 +9,8 @@ class OwnerList extends Component{
     createListItems(){
         return this.props.owners.map((owner)=> {
             return (
-                <li key = {owner.email} onClick={() => this.props.selectOwner(owner)}>
-                    {owner.firstName} 
+                <li onHover className = "list-group-item" key = {owner.email} onClick={() => this.props.selectOwner(owner)}>
+                    {owner.lastName}, {owner.firstName} 
                 </li>
             );
         }); //map loops through props.users, which refers to ALL owner reducers
@@ -20,7 +20,7 @@ class OwnerList extends Component{
        return(
             <div>
                 <div>
-                    <ul>
+                    <ul className = "list-group">
                         {this.createListItems()}
                     </ul>
                 </div>
