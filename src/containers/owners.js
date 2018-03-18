@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {selectOwner} from '../actions/selectOwner';
+import {selectOwner} from '../actions/OwnerActions';
 import ownerInfo from './ownerInfo';
 
 //dumb component that doesn't know anything about main data...works with container

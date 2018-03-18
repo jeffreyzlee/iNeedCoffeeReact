@@ -60,6 +60,8 @@ export default function (state = initialState, action){
             console.log("You are here");
             initialState.owners = initialState.owners.concat(action.payload);
             return initialState.owners;
+        case "LOAD_OWNERS_SUCCESS":
+            return action.owners;
         default:
             return initialState.owners;
     }

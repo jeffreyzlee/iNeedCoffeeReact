@@ -15,15 +15,26 @@ describe('All Reducers', () => {
     expect(wrapper.length).toEqual(1);
   });
 
-  it('Finds owners', () => {
+  it('Finds owners reducer', () => {
     expect(wrapper.find(ownerReducer));
+    expect(wrapper.find(ownerReducer).length).toEqual(0);
   });
 
-  it('Finds agents', () => {
+  it('Correctly renders default Owner List from Ownder reducer', () => {
+    const action = allReducers;
+    const owners = ownerReducer(null, action);
+    expect(owners.length).toEqual(3);
+  });
+
+
+  it('Finds agents reducer', () => {
     expect(wrapper.find(agentReducer));
+    expect(wrapper.find(ownerReducer).length).toEqual(0);
   });
 
-  it('Finds Active Owners', () => {
+  it('Finds Active Owners Reducer', () => {
     expect(wrapper.find(activeOwnerReducer));
+    expect(wrapper.find(ownerReducer).length).toEqual(0);
   });
 });
+

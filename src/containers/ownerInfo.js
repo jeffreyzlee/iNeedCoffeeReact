@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectOwner} from '../actions/selectOwner';
 import history from '../history';
 class OwnerInfo extends Component { 
     handleSubmit(e){

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
+import css from './landing.module.css';
 import './landing.css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -17,11 +18,12 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className="landing">
+        <h3 style={{paddingLeft: '110px'}}> HomePage </h3>
         <div>
-          <button className="button" onClick = {this.move}>Owners Registration</button>
+          <button className={css.button} onClick = {this.move} >Owners Registration</button>
         </div>
         <div>
-            <button className="button2" onClick={this.move2}>Agents Registration</button>
+            <button className={css.button2} onClick={this.move2}>Agents Registration</button>
         </div>
       </div>
     );

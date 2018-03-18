@@ -2,10 +2,9 @@ import React from 'react';
 import TextInput from '../common/TextInput';
 import './agentReg.css';
 import {connect} from 'react-redux';
-import {addAgent} from '../../actions/addAgent';
+import {addAgent} from '../../actions/AgentActions';
 import {bindActionCreators} from 'redux';
 import history from '../../history';
- 
   export class AgentReg extends React.Component {
       constructor(props){
           super(props);
@@ -42,8 +41,8 @@ import history from '../../history';
           console.log("entered");
           const {agent} = this.state;
           const {dispatch} = this.props;
-          dispatch(addAgent(agent));
           history.push('/ownerList');
+          dispatch(addAgent(agent));
       }
       
       render() {
@@ -51,7 +50,7 @@ import history from '../../history';
           return (
           <div className = "input">
               <form>
-                  <h1>Agent Registration</h1>
+                  <h1 className>Agent Registration</h1>
                   <TextInput
                   name="firstName"
                   label="First Name"

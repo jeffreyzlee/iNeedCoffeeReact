@@ -4,7 +4,7 @@ import './ownerReg.css';
 import TextInput from '../common/TextInput';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {addOwner} from '../../actions/addOwner';
+import {addOwner} from '../../actions/OwnerActions';
 import history from '../../history';
 
  
@@ -50,6 +50,7 @@ handleChange(e) {
 }
 
 handleSubmit(e){ 
+  console.log("HAHAH232AHAHA");
     e.preventDefault();
     this.setState({submitted: true});
     const {owner} = this.state;
@@ -60,7 +61,8 @@ handleSubmit(e){
     //const {type, payload} = addOwner(owner);
 
     //do you return addNew to update the reducer??
-    dispatch(addOwner(owner));
+    this.props.dispatch(addOwner(owner));
+    console.log("HAHAHAHAHA");
     history.push('/connect');
 }
 
